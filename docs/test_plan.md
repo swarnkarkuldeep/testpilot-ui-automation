@@ -212,3 +212,16 @@ in ~8s locally).
 | `data/sort_options.json` | TC-INV-002/003/004/005 | Rows of `{id, tc_id, option_value, expected_names, expected_prices}`, one per sort order, with the exact product order observed live (note: price ties are **not** simply reversed between low-to-high and high-to-low — see the regression suite report) |
 | `data/checkout_data.csv` | TC-CHK-002/003/004 | Rows of `(id, tc_id, first_name, last_name, postal_code, expected_error)` covering each missing-field case |
 | `data/checkout_cart_totals.json` | TC-CHK-007 | Product slug sets paired with the exact observed item total / tax / total (8% tax, rounded to the nearest cent) |
+
+## 12. Logged Defects
+
+Discrepancies found between this plan's assumptions and the app's live
+behavior were filed as GitHub Issues with reproducible steps, expected vs.
+actual results, and a severity rating, rather than silently "fixed" in the
+plan:
+
+| Issue | Test Case | Severity | Summary |
+|---|---|---|---|
+| [#1](https://github.com/swarnkarkuldeep/testpilot-ui-automation/issues/1) | TC-NAV-003 | Low | "Reset App State" clears the cart badge but leaves the "Remove" button stuck (stale UI state) |
+| [#2](https://github.com/swarnkarkuldeep/testpilot-ui-automation/issues/2) | TC-LOGOUT-002 | Low | Cart contents persist across logout/login instead of resetting per session |
+| [#3](https://github.com/swarnkarkuldeep/testpilot-ui-automation/issues/3) | TC-CART-005 | Medium | Checkout proceeds with an empty cart — no validation blocks it |
