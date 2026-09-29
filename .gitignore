@@ -1,0 +1,12 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.remember/
+
+reports/
+allure-results/
+allure-report/
+
+.env

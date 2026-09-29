@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TestPilot UI Automation</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <nav class="nav">
+      <span class="brand">TestPilot<span class="brand-accent">.</span></span>
+      <div class="nav-links">
+        <a href="#coverage">Coverage</a>
+        <a href="#stack">Stack</a>
+        <a href="#quickstart">Quickstart</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <p class="eyebrow">UI Test Automation Framework</p>
+      <h1>Testing Sauce&nbsp;Demo,<br />end to end.</h1>
+      <p class="hero-sub">
+        A Playwright + pytest framework built on the Page Object Model —
+        data-driven, self-documenting with Allure, and wired into CI.
+      </p>
+      <div class="hero-badges">
+        <span class="badge">Python 3.11+</span>
+        <span class="badge">Playwright</span>
+        <span class="badge">pytest</span>
+        <span class="badge">Allure</span>
+        <span class="badge">GitHub Actions</span>
+        <span class="badge">Docker</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="stats">
+      <div class="stat">
+        <span class="stat-number">35</span>
+        <span class="stat-label">test cases planned</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">40</span>
+        <span class="stat-label">automated tests</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">8</span>
+        <span class="stat-label">smoke tests, &lt;10s</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">pass rate</span>
+      </div>
+    </section>
+
+    <section id="coverage" class="section">
+      <h2>Coverage, by module</h2>
+      <p class="section-sub">Every case traces back to an ID in the test plan — from smoke-critical to edge case.</p>
+
+      <div class="coverage-grid">
+        <div class="coverage-card">
+          <span class="coverage-count">8</span>
+          <h3>Login</h3>
+          <p>Valid &amp; invalid credentials, locked-out user, empty fields.</p>
+        </div>
+        <div class="coverage-card">
+          <span class="coverage-count">8</span>
+          <h3>Inventory</h3>
+          <p>Product count, all 4 sort orders, add / remove from cart.</p>
+        </div>
+        <div class="coverage-card">
+          <span class="coverage-count">5</span>
+          <h3>Cart</h3>
+          <p>Item reflection, removal, navigation, empty-cart edge case.</p>
+        </div>
+        <div class="coverage-card">
+          <span class="coverage-count">8</span>
+          <h3>Checkout</h3>
+          <p>Happy path, field validation, cancel flows, totals math.</p>
+        </div>
+        <div class="coverage-card">
+          <span class="coverage-count">2</span>
+          <h3>Logout</h3>
+          <p>Session end, cart-state behavior across re-login.</p>
+        </div>
+        <div class="coverage-card">
+          <span class="coverage-count">4</span>
+          <h3>Navigation</h3>
+          <p>Menu, All Items, Reset App State, external links.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack" class="section section-alt">
+      <h2>How it's built</h2>
+      <div class="feature-grid">
+        <div class="feature">
+          <h3>Page Object Model</h3>
+          <p>Locators and actions only — every assertion lives in the test, never the page object.</p>
+        </div>
+        <div class="feature">
+          <h3>Data-driven</h3>
+          <p>Parametrized cases loaded straight from <code>data/*.json</code> and <code>data/*.csv</code>, with readable ids.</p>
+        </div>
+        <div class="feature">
+          <h3>Allure reporting</h3>
+          <p>Step-by-step actions, severity from the test plan's priorities, feature labels, screenshots on failure.</p>
+        </div>
+        <div class="feature">
+          <h3>No time.sleep</h3>
+          <p>Playwright auto-waiting and <code>expect()</code> web-first assertions only.</p>
+        </div>
+        <div class="feature">
+          <h3>CI-native</h3>
+          <p>Smoke on every push, full regression on pull requests and nightly, via GitHub Actions.</p>
+        </div>
+        <div class="feature">
+          <h3>Containerized</h3>
+          <p>Ships as a Docker image on Playwright's official base — reproducible anywhere.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="quickstart" class="section">
+      <h2>Quickstart</h2>
+      <pre class="code-block"><code><span class="c-comment"># run the smoke suite locally</span>
+pip install -r requirements.txt
+playwright install chromium
+pytest -m smoke
+
+<span class="c-comment"># or run it in Docker — no local setup at all</span>
+docker build -t testpilot-ui-automation .
+docker run --rm testpilot-ui-automation</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>TestPilot UI Automation &mdash; built against <a href="https://www.saucedemo.com" target="_blank" rel="noopener">saucedemo.com</a>, a public demo store.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+id,tc_id,priority,first_name,last_name,postal_code,expected_error
+missing-first-name,TC-CHK-002,P1,,Swarnkar,500001,Error: First Name is required
+missing-last-name,TC-CHK-003,P2,Kuldeep,,500001,Error: Last Name is required
+missing-postal-code,TC-CHK-004,P2,Kuldeep,Swarnkar,,Error: Postal Code is required

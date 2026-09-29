@@ -1,0 +1,29 @@
+[
+  {
+    "id": "single-item-backpack",
+    "tc_id": "TC-CHK-007",
+    "priority": "P1",
+    "product_slugs": ["sauce-labs-backpack"],
+    "expected_subtotal": "Item total: $29.99",
+    "expected_tax": "Tax: $2.40",
+    "expected_total": "Total: $32.39"
+  },
+  {
+    "id": "single-item-bike-light",
+    "tc_id": "TC-CHK-007",
+    "priority": "P1",
+    "product_slugs": ["sauce-labs-bike-light"],
+    "expected_subtotal": "Item total: $9.99",
+    "expected_tax": "Tax: $0.80",
+    "expected_total": "Total: $10.79"
+  },
+  {
+    "id": "three-items-mixed",
+    "tc_id": "TC-CHK-007",
+    "priority": "P1",
+    "product_slugs": ["sauce-labs-backpack", "sauce-labs-bike-light", "sauce-labs-bolt-t-shirt"],
+    "expected_subtotal": "Item total: $55.97",
+    "expected_tax": "Tax: $4.48",
+    "expected_total": "Total: $60.45"
+  }
+]

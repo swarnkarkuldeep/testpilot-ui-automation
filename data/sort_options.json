@@ -1,0 +1,66 @@
+[
+  {
+    "id": "name-ascending",
+    "tc_id": "TC-INV-002",
+    "priority": "P2",
+    "option_value": "az",
+    "option_label": "Name (A to Z)",
+    "expected_names": [
+      "Sauce Labs Backpack",
+      "Sauce Labs Bike Light",
+      "Sauce Labs Bolt T-Shirt",
+      "Sauce Labs Fleece Jacket",
+      "Sauce Labs Onesie",
+      "Test.allTheThings() T-Shirt (Red)"
+    ],
+    "expected_prices": ["$29.99", "$9.99", "$15.99", "$49.99", "$7.99", "$15.99"]
+  },
+  {
+    "id": "name-descending",
+    "tc_id": "TC-INV-003",
+    "priority": "P2",
+    "option_value": "za",
+    "option_label": "Name (Z to A)",
+    "expected_names": [
+      "Test.allTheThings() T-Shirt (Red)",
+      "Sauce Labs Onesie",
+      "Sauce Labs Fleece Jacket",
+      "Sauce Labs Bolt T-Shirt",
+      "Sauce Labs Bike Light",
+      "Sauce Labs Backpack"
+    ],
+    "expected_prices": ["$15.99", "$7.99", "$49.99", "$15.99", "$9.99", "$29.99"]
+  },
+  {
+    "id": "price-ascending",
+    "tc_id": "TC-INV-004",
+    "priority": "P2",
+    "option_value": "lohi",
+    "option_label": "Price (low to high)",
+    "expected_names": [
+      "Sauce Labs Onesie",
+      "Sauce Labs Bike Light",
+      "Sauce Labs Bolt T-Shirt",
+      "Test.allTheThings() T-Shirt (Red)",
+      "Sauce Labs Backpack",
+      "Sauce Labs Fleece Jacket"
+    ],
+    "expected_prices": ["$7.99", "$9.99", "$15.99", "$15.99", "$29.99", "$49.99"]
+  },
+  {
+    "id": "price-descending",
+    "tc_id": "TC-INV-005",
+    "priority": "P2",
+    "option_value": "hilo",
+    "option_label": "Price (high to low)",
+    "expected_names": [
+      "Sauce Labs Fleece Jacket",
+      "Sauce Labs Backpack",
+      "Sauce Labs Bolt T-Shirt",
+      "Test.allTheThings() T-Shirt (Red)",
+      "Sauce Labs Bike Light",
+      "Sauce Labs Onesie"
+    ],
+    "expected_prices": ["$49.99", "$29.99", "$15.99", "$15.99", "$9.99", "$7.99"]
+  }
+]

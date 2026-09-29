@@ -1,0 +1,58 @@
+[
+  {
+    "id": "invalid-username",
+    "tc_id": "TC-LOGIN-005",
+    "priority": "P1",
+    "username": "invalid_user",
+    "password": "secret_sauce",
+    "expected_error": "Epic sadface: Username and password do not match any user in this service"
+  },
+  {
+    "id": "invalid-password",
+    "tc_id": "TC-LOGIN-005",
+    "priority": "P1",
+    "username": "standard_user",
+    "password": "wrong_password",
+    "expected_error": "Epic sadface: Username and password do not match any user in this service"
+  },
+  {
+    "id": "invalid-username-and-password",
+    "tc_id": "TC-LOGIN-005",
+    "priority": "P1",
+    "username": "invalid_user",
+    "password": "wrong_password",
+    "expected_error": "Epic sadface: Username and password do not match any user in this service"
+  },
+  {
+    "id": "locked-out-user",
+    "tc_id": "TC-LOGIN-004",
+    "priority": "P1",
+    "username": "locked_out_user",
+    "password": "secret_sauce",
+    "expected_error": "Epic sadface: Sorry, this user has been locked out."
+  },
+  {
+    "id": "empty-username",
+    "tc_id": "TC-LOGIN-006",
+    "priority": "P2",
+    "username": "",
+    "password": "secret_sauce",
+    "expected_error": "Epic sadface: Username is required"
+  },
+  {
+    "id": "empty-password",
+    "tc_id": "TC-LOGIN-007",
+    "priority": "P2",
+    "username": "standard_user",
+    "password": "",
+    "expected_error": "Epic sadface: Password is required"
+  },
+  {
+    "id": "empty-username-and-password",
+    "tc_id": "TC-LOGIN-008",
+    "priority": "P3",
+    "username": "",
+    "password": "",
+    "expected_error": "Epic sadface: Username is required"
+  }
+]
