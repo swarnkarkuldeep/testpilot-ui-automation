@@ -12,8 +12,13 @@ COPY . .
 
 ENV HEADLESS=true \
     BASE_URL=https://www.saucedemo.com \
-    PYTHONUNBUFFERED=1
+    PYTHONUNBUFFERED=1 \
+    TEST_SUITE=regression \
+    PORT=8000
 
-# Default to the fast smoke suite; override at `docker run` time, e.g.:
-#   docker run --rm testpilot-ui-automation pytest -m regression
-CMD ["pytest", "-m", "smoke"]
+EXPOSE 8000
+
+# Runs the test suite, then serves the project site + report — see
+# docker-entrypoint.sh. Override the suite at `docker run` time, e.g.:
+#   docker run -p 8000:8000 -e TEST_SUITE=smoke testpilot-ui-automation
+CMD ["sh", "docker-entrypoint.sh"]

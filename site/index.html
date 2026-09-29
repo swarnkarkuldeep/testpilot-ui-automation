@@ -14,6 +14,7 @@
       <div class="nav-links">
         <a href="#coverage">Coverage</a>
         <a href="#stack">Stack</a>
+        <a href="#defects">Defects</a>
         <a href="#quickstart">Quickstart</a>
       </div>
     </nav>
@@ -32,6 +33,10 @@
         <span class="badge">Allure</span>
         <span class="badge">GitHub Actions</span>
         <span class="badge">Docker</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="../reports/report.html">View latest test report &rarr;</a>
+        <a class="btn btn-ghost" href="https://github.com/swarnkarkuldeep/testpilot-ui-automation" target="_blank" rel="noopener">View on GitHub</a>
       </div>
     </div>
   </header>
@@ -124,16 +129,43 @@
       </div>
     </section>
 
+    <section id="defects" class="section section-alt">
+      <h2>Defects logged</h2>
+      <p class="section-sub">Real discrepancies the regression suite caught between the test plan's assumptions and the app's actual behavior — filed as GitHub Issues, not silently patched over.</p>
+
+      <div class="defect-list">
+        <a class="defect" href="https://github.com/swarnkarkuldeep/testpilot-ui-automation/issues/1" target="_blank" rel="noopener">
+          <span class="defect-sev sev-low">Low</span>
+          <span class="defect-title">"Reset App State" leaves stale "Remove" buttons on the inventory page</span>
+          <span class="defect-link">#1 &rarr;</span>
+        </a>
+        <a class="defect" href="https://github.com/swarnkarkuldeep/testpilot-ui-automation/issues/2" target="_blank" rel="noopener">
+          <span class="defect-sev sev-low">Low</span>
+          <span class="defect-title">Cart contents persist across logout/login instead of resetting per session</span>
+          <span class="defect-link">#2 &rarr;</span>
+        </a>
+        <a class="defect" href="https://github.com/swarnkarkuldeep/testpilot-ui-automation/issues/3" target="_blank" rel="noopener">
+          <span class="defect-sev sev-medium">Medium</span>
+          <span class="defect-title">Checkout proceeds with an empty cart — no validation blocks it</span>
+          <span class="defect-link">#3 &rarr;</span>
+        </a>
+      </div>
+    </section>
+
     <section id="quickstart" class="section">
       <h2>Quickstart</h2>
-      <pre class="code-block"><code><span class="c-comment"># run the smoke suite locally</span>
+      <pre class="code-block"><code><span class="c-comment"># one command: builds, runs the full regression suite, then serves this</span>
+<span class="c-comment"># site + the test report — nothing else to type</span>
+docker compose up
+
+<span class="c-comment"># then open:</span>
+<span class="c-comment">#   http://localhost:8000/site/            (this page)</span>
+<span class="c-comment">#   http://localhost:8000/reports/report.html  (test report)</span>
+
+<span class="c-comment"># — or run it natively —</span>
 pip install -r requirements.txt
 playwright install chromium
-pytest -m smoke
-
-<span class="c-comment"># or run it in Docker — no local setup at all</span>
-docker build -t testpilot-ui-automation .
-docker run --rm testpilot-ui-automation</code></pre>
+pytest -m smoke</code></pre>
     </section>
   </main>
 

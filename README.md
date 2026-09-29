@@ -25,10 +25,40 @@ app's real behavior turned out to differ from the original plan — see its
 
 All tools are free and open source.
 
+## One-command demo (e.g. for an interview)
+
+No commands to remember — this builds the image, runs the full 40-test
+regression suite, then serves both the project overview and the test
+report:
+
+```bash
+docker compose up
+```
+
+Then open:
+
+- **http://localhost:8000/site/** — project overview (this page's cousin)
+- **http://localhost:8000/reports/report.html** — the test report just generated
+
+The terminal itself also shows the live test run and prints both URLs once
+they're ready. Stop it with `docker compose down` (or Ctrl+C, then `down`).
+Re-run any time with `docker compose up --build` to pick up code changes.
+
+Prefer the smoke suite instead (fast, ~10s)? `TEST_SUITE=smoke docker compose up`.
+Without Compose: `docker build -t testpilot-ui-automation . && docker run -p 8000:8000 testpilot-ui-automation`.
+
+This also shows up as a container in **Docker Desktop** (named
+`testpilot-demo`) — click it to see live logs, or start/stop it from there
+without touching a terminal at all.
+
 ## Project structure
 
 ```
 .github/workflows/tests.yml  CI: smoke on every push, regression on PRs + nightly
+docker-compose.yml           `docker compose up` — the one-command demo
+Dockerfile                   Playwright's official image + this project
+docker-entrypoint.sh         Runs the suite, then serves site/ + reports/
+site/                        Static HTML+CSS project showcase page (served by the container)
 docs/test_plan.md            The test plan this suite implements
 pages/                       Page Objects — locators and actions only, no assertions
   base_page.py                Shared helpers (navigate/click/fill/get_text) + common header/menu elements

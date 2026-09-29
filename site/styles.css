@@ -119,6 +119,39 @@ code {
   gap: 10px;
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #06281c;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
 .badge {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -271,6 +304,66 @@ code {
   color: var(--ink-soft);
   font-size: 0.92rem;
   margin: 0 0 0 18px;
+}
+
+/* ---------- Defects list ---------- */
+
+.defect-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 96px;
+}
+
+.defect {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.defect:hover {
+  border-color: var(--accent);
+  transform: translateX(2px);
+}
+
+.defect-sev {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.sev-low {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.sev-medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.defect-title {
+  flex: 1;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.defect-link {
+  flex-shrink: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 
 /* ---------- Code block ---------- */

@@ -1,0 +1,9 @@
+services:
+  testpilot:
+    build: .
+    image: testpilot-ui-automation:latest
+    container_name: testpilot-demo
+    ports:
+      - "8000:8000"
+    environment:
+      TEST_SUITE: regression
